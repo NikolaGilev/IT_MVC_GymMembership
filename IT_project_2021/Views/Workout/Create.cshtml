@@ -1,0 +1,117 @@
+﻿@using IT_project_2021.Models
+
+@model IT_project_2021.Models.ExercisesModel
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+    <div id="kingDiv">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Add Exercise</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ExerciseName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ExerciseName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ExerciseName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.ChooseExercises, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(m => m.ChooseExercises, new SelectList(Enum.GetValues(typeof(SelectWorkouts))), "Select Gender", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ChooseExercises, "", new { @class = "text-danger" })
+                </div>*@
+            @*</div>*@
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.kgLifted, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.kgLifted, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.kgLifted, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Reps, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Reps, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Reps, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sets, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sets, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Sets, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
+        <div class="backLink">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+<style>
+    body {
+        background-image: url('../../Photos/gym.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    #kingDiv {
+        background-color: white;
+        width: 50%;
+        padding-left: 70px;
+        padding-bottom: 35px;
+        padding-top: 35px;
+        margin-left: 270px;
+        vertical-align: middle;
+        display: block;
+        border-radius: 50px;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    .backLink {
+        padding-left: 125px;
+    }
+
+    .col-md-10 {
+        padding-left: 50px;
+    }
+</style>

@@ -1,0 +1,109 @@
+﻿@model IT_project_2021.Models.UserModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div id="kingDiv">
+        <h4>UserModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HeightInCm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HeightInCm)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Bodyweight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Bodyweight)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sex)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sex)
+            </dd>
+
+        </dl>
+
+    <p class="backLink">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>
+</body>
+</html>
+
+
+<style>
+    body {
+        background-image: url('../../Photos/gym.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    #kingDiv {
+        background-color: white;
+        width: 50%;
+        padding-left: 70px;
+        padding-bottom: 35px;
+        padding-top: 35px;
+        margin-left: 270px;
+        vertical-align: middle;
+        display: block;
+        border-radius: 50px;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    .backLink {
+        padding-left: 125px;
+    }
+
+    .col-md-10 {
+        padding-left: 50px;
+    }
+</style>

@@ -1,0 +1,101 @@
+﻿@model IT_project_2021.Models.ExercisesModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div id="kingDiv">
+
+        <h3>Are you sure you want to delete this?</h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ExerciseName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ExerciseName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.kgLifted)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.kgLifted)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Reps)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Reps)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sets)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sets)
+            </dd>
+
+        </dl>
+
+        <div class="backLink">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+    body {
+        background-image: url('../../Photos/gym.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    #kingDiv {
+        background-color: white;
+        width: 50%;
+        padding-left: 70px;
+        padding-bottom: 35px;
+        padding-top: 35px;
+        margin-left: 270px;
+        vertical-align: middle;
+        display: block;
+        border-radius: 50px;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    .backLink {
+        padding-left: 125px;
+    }
+
+    .col-md-10 {
+        padding-left: 50px;
+    }
+</style>

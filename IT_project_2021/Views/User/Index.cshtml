@@ -1,0 +1,109 @@
+﻿@model IEnumerable<IT_project_2021.Models.UserModel>
+@*@model IT_project_2021.Models.UserModel*@
+
+@{
+    ViewBag.Title = "Lifters";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="kingDiv">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HeightInCm)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bodyweight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sex)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HeightInCm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bodyweight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sex)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.UserId }) 
+                        </td>
+                </tr>
+            }
+
+        </table>
+        <p class="createNew">
+            @Html.ActionLink("Create New", "Create", new { @class = "control-label col-md-2" })
+        </p>
+    </div>
+
+</body>
+</html>
+
+
+
+<style>
+    body {
+        background-image: url('../../Photos/gym.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    #kingDiv {
+        margin-top: 20px;
+        background-color: white;
+        padding-bottom: 25px;
+        padding-top: 25px;
+        border-radius: 50px;
+    }
+
+    .createNew {
+        float: right;
+        padding: 5px;
+        background-color: red;
+        font: bold;
+        border-radius: 20px;
+        box-shadow: 0 10px 6px rgba(0, 0, 0, 0.12), 0 10px 4px rgba(0, 0, 0, 0.24);
+        opacity: 0.9;
+    }
+</style>

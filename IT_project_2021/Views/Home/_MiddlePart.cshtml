@@ -1,0 +1,37 @@
+﻿
+
+<div class="row">
+    <div class="panel panel-default panel-body" id="divking">
+
+        <div id="temp" class="col-md-4">
+            <div class="panel panel-default" id="toYellow">
+                <div class="panel-heading">
+                    <h2>New Here? Get Started!</h2>
+                </div>
+                <div class="panel-body">
+                    @Html.ActionLink("Add Workout Routine", "Create", "Workout", null, new { @class = "btn btn-info kopce", style = "color: white; text-decoration:none;" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default" id="toYellow">
+                <div class="panel-heading">
+                    <h2>Write down your progress!</h2>
+                </div>
+                <div class="panel-body">
+                    @Html.ActionLink("Add Lift", "Create", "Workout", null, new { @class = "btn btn-info kopce", style = "color: white; text-decoration:none;" })
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<style>
+    #temp{
+        margin-left:180px
+    }
+
+
+</style>
