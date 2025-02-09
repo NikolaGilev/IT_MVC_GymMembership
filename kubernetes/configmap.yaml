@@ -1,0 +1,8 @@
+## ConfigMap for application
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: gym-app
+data:
+  ConnectionStrings__DefaultConnection: "Server=db;Database=GymMembership;User Id=sa;Password=YourStrong!Passw0rd;"

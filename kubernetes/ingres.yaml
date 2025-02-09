@@ -1,0 +1,19 @@
+## Ingress for application
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gym-app-ingress
+  namespace: gym-app
+spec:
+  rules:
+  - host: gym-app.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: gym-app-service
+            port:
+              number: 80
+

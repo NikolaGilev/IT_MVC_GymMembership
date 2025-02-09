@@ -1,0 +1,14 @@
+## Service for application
+apiVersion: v1
+kind: Service
+metadata:
+  name: gym-app-service
+  namespace: gym-app
+spec:
+  selector:
+    app: gym-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
